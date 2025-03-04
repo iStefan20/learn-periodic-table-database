@@ -1,0 +1,74 @@
+psql --username=freecodecamp --dbname=periodic_table
+psql --username=freecodecamp --dbname=periodic_table
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups).*"
+[[ "$HISTCONTROL" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+mkdir periodic_table
+cd periodic_table
+git init
+git checkout -b main
+touch element.sh
+git add.
+git add
+git commit -m "Add element.sh"
+git add .
+git commit -m "add element.sh"
+chmod +x element.sh
+./element.sh
+git add .
+git commit -m "add echo"
+git rebase -i HEAD~2
+git rebase -i HEAD~1
+__vsc_prompt_cmd_original
+git commit --amend
+git add .
+git commit -m "Initial commit"
+git branch
+git checkout main
+git status
+git commit --amend --no-edit -m "Initial commit"
+git push --force
+git log --oneline
+git rebase -i c95b672
+git reset HEAD~1
+git log
+git commit --amend
+git add .
+git commit -m "changed prompt to Initial commit"
+git commit --amend
+./element.sh 1
+./element.sh H
+./element.sh Hydrogen
+git commit -m "fix: output"
+git add .
+git commit -m "fix: output"
+git add .
+git commit -m "check errors"
